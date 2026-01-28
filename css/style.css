@@ -1,0 +1,150 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #f7f3ee;
+  color: #3b2f2f;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  margin: 0;
+
+
+}
+
+.container {
+  text-align: center;
+  padding: 2rem;
+  max-width: 600px;
+}
+
+.logo {
+  width: 150px;
+  margin-bottom: 2rem;
+}
+
+.tagline {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.2rem;
+  color: #8b6b3e;
+  margin-bottom: 1rem;
+}
+
+.description {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+.launching-soon span {
+  display: inline-block;
+  background: #3b2f2f;
+  color: #f7f3ee;
+  padding: 0.5rem 1.2rem;
+  border-radius: 30px;
+  margin-bottom: 2rem;
+}
+
+.signup-form {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.signup-form input {
+  padding: 0.7rem;
+  border: 1px solid #c9b38c;
+  border-radius: 5px;
+  min-width: 220px;
+}
+
+.signup-form button {
+  background: #8b6b3e;
+  color: white;
+  border: none;
+  padding: 0.7rem 1.2rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.signup-form button:hover {
+  opacity: 0.9;
+}
+
+.socials a {
+  margin: 0 0.5rem;
+  color: #3b2f2f;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 480px) {
+  .tagline {
+    font-size: 1.8rem;
+  }
+}
+/* Wave Container Positioning */
+.wave-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  z-index: -1; /* Keeps it behind your text if they overlap */
+  transform: rotate(180deg); /* Flips wave to be at the top */
+}
+
+.waves {
+  position: relative;
+  width: 100%;
+  height: 15vh; /* Adjust height of the wave area */
+  min-height: 100px;
+  max-height: 150px;
+}
+
+/* Animation Logic */
+.parallax > use {
+  animation: move-forever 25s cubic-bezier(.55,.5,.45,.5) infinite;
+}
+.parallax > use:nth-child(1) {
+  animation-delay: -2s;
+  animation-duration: 7s;
+}
+.parallax > use:nth-child(2) {
+  animation-delay: -3s;
+  animation-duration: 10s;
+}
+.parallax > use:nth-child(3) {
+  animation-delay: -4s;
+  animation-duration: 13s;
+}
+.parallax > use:nth-child(4) {
+  animation-delay: -5s;
+  animation-duration: 20s;
+}
+
+@keyframes move-forever {
+  0% {
+   transform: translate3d(-90px,0,0);
+  }
+  100% { 
+    transform: translate3d(85px,0,0);
+  }
+}
+
+/* Mobile fix for wave height */
+@media (max-width: 768px) {
+  .waves {
+    height: 40px;
+    min-height: 40px;
+  }
+}
